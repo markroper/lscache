@@ -33,25 +33,6 @@ test('Testing set() and get() with string', function() {
 
 if (lscache.supported()) {
 
-test('Testing set() with non-string values', function() {
-  var key, value;
-
-  key = 'numberkey';
-  value = 2;
-  lscache.set(key, value, 3);
-  equals(lscache.get(key)+1, value+1, 'We expect incremented value to be ' + (value+1));
-
-  key = 'arraykey';
-  value = ['a', 'b', 'c'];
-  lscache.set(key, value, 3);
-  equals(lscache.get(key).length, value.length, 'We expect array to have length ' + value.length);
-
-  key = 'objectkey';
-  value = {'name': 'Pamela', 'age': 26};
-  lscache.set(key, value, 3);
-  equals(lscache.get(key).name, value.name, 'We expect name to be ' + value.name);
-});
-
 test('Testing remove()', function() {
   var key = 'thekey';
   lscache.set(key, 'bla', 2);
